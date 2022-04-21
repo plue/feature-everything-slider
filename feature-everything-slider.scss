@@ -1,0 +1,141 @@
+:root {
+  --everything-slider-color: var(--base-color-background);
+  --everything-slider-background: var(--base-color-text);
+}
+
+.feature-everything-slider {
+  position: relative;
+  margin-bottom: var(--base-offset-vertical);
+  background: var(--everything-slider-background);
+
+  .slick-initialized .slick-slide.has-custom-content-position {
+    display: flex;
+  }
+
+  .wp-block-group > p,
+  .wp-block-cover__inner-container {
+    width: var(--base-layout-width) !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  &__slides {
+    user-select: initial;
+    min-height: 50px;
+
+    .slick-slide {
+      overflow: hidden;
+      margin-bottom: 0;
+      padding: 0;
+
+      :first-child {
+        margin-top: 0;
+      }
+
+      :last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .wp-block-group {
+      min-height: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: calc(2*var(--base-offset-vertical));
+      padding-bottom: calc(2*var(--base-offset-vertical));
+    }
+
+    .wp-block-cover {
+      color: var(--everything-slider-color);
+
+      &:not([style*="min-height"]) {
+        min-height: 100vh;
+        min-height: calc(var(--vh, 1vh) * 100);
+        max-height: calc(var(--vh, 1vh) * 100);
+      }
+    }
+  }
+
+
+  &__arrow {
+    display: block;
+    line-height: 1;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    &.slick-disabled {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    &.is-prev {
+      left: var(--base-space);
+      transform: rotate(180deg) translateY(calc(50% + 4px));
+    }
+
+    &.is-next {
+      right: var(--base-space);
+    }
+
+    svg {
+      width: 50px;
+      height: 50px;
+      opacity: 0.61;
+      transition: opacity 200ms ease;
+
+      @media (max-width: 599px) {
+        width: 36px;
+        height: 36px;
+      }
+    }
+
+    path {
+      fill: var(--everything-slider-color);
+    }
+
+    &:hover svg {
+      opacity: 1;
+    }
+  }
+
+  .slick-dots {
+    list-style: none;
+    font-size: 0;
+    position: absolute;
+    bottom: var(--base-space);
+    right: 0;
+    left: 0;
+    padding: var(--base-space);
+    margin-bottom: 0;
+    text-align: center;
+
+    li {
+      background: transparent;
+      width: 16px;
+      height: 8px;
+      border: 1px solid var(--everything-slider-color);
+      display: inline-block;
+      margin: 0 6px;
+      cursor: pointer;
+      transition: all 200ms ease;
+      border-radius: 100px;
+      opacity: 0.61;
+
+      &.slick-active {
+        background: var(--everything-slider-color);
+      }
+
+      &:hover {
+        opacity: 1;
+        background: var(--everything-slider-color);
+      }
+
+      button {
+        display: none;
+      }
+    }
+  }
+}

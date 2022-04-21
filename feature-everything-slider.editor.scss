@@ -1,0 +1,44 @@
+@import "feature-everything-slider.scss";
+
+.editor-styles-wrapper .feature-everything-slider {
+  border-top: 8px dashed var(--base-color-text);
+
+  .feature-everything-slider__slides {
+    .block-editor-inner-blocks {
+      width: 100%;
+
+      div.block-editor-block-list__block {
+        overflow: hidden;
+      }
+
+      > .block-editor-block-list__layout > * {
+        border-bottom: 3px dashed var(--base-color-light);
+      }
+    }
+  }
+
+  .feature-everything-slider__arrow {
+    pointer-events: none;
+  }
+
+  &.is-cover .feature-everything-slider__slides {
+    min-height: 600px;
+
+    .wp-block-group {
+      .wp-block-image:first-child {
+        .components-resizable-box__container {
+          width: 100% !important;
+          max-width: unset !important;
+          min-height: unset !important;
+          height: 600px !important;
+
+          img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}
