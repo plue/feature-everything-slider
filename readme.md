@@ -6,7 +6,7 @@ It's the last slider block you'll ever need.
 
 ---
 
-Version: 1.1.5
+Version: 1.1.6
 
 Author: plue @ https://modularity.group
 
@@ -19,6 +19,8 @@ Slide literally everything: paragraphs, images, columns, covers, videos and even
 Available css variables are `--everything-slider-color` and `--everything-slider-background`.
 
 ---
+
+1.1.6 | tweak cover layout and dots size
 
 1.1.5 | render arrows via removeable action
 

@@ -8,12 +8,16 @@
   margin-bottom: var(--base-offset-vertical);
   background: var(--everything-slider-background);
 
-  .slick-initialized .slick-slide.has-custom-content-position {
-    display: flex;
+  .slick-initialized {
+    .slick-slide.wp-block-cover,
+    .slick-slide.has-custom-content-position {
+      display: flex !important;
+    }
   }
 
   .wp-block-group > p,
   .wp-block-cover__inner-container {
+    position: relative;
     width: var(--base-layout-width) !important;
     max-width: 100% !important;
     margin-left: auto !important;
@@ -54,6 +58,14 @@
         min-height: 100vh;
         min-height: calc(var(--vh, 1vh) * 100);
         max-height: calc(var(--vh, 1vh) * 100);
+      }
+
+      .wp-block-cover__inner-container {
+        padding: var(--base-offset);
+
+        * {
+          color: var(--base-color-background);
+        }
       }
     }
   }
@@ -114,7 +126,7 @@
 
     li {
       background: transparent;
-      width: 16px;
+      width: 8px;
       height: 8px;
       border: 1px solid var(--everything-slider-color);
       display: inline-block;
